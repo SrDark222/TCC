@@ -1,0 +1,368 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --background: #0e0e0e;
+}
+
+body {
+    background: var(--background);
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100svh;
+    width: 100%;
+    align-items: center;
+}
+
+.container-api-load {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    color: #fff;
+}
+
+.container-api-load h1 {
+    font-size: 200%;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    font-weight: 900;
+}
+
+.container-api-load span {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container-introduction {
+    display: none;
+    gap: 20px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    height: 100svh;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.container-introduction h1 {
+    color: #fff;
+    font-size: clamp(30px, 6vw, 40px);
+    text-align: center;
+}
+
+.container-introduction button {
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 10px 20px;
+}
+
+.container-main {
+    display: none;
+    opacity: 0;
+    gap: 30px;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    padding: 0 10px;
+}
+
+.container-main section {
+    display: flex;
+    opacity: 0;
+    gap: 30px;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.container-infomation h1 {
+    color: #fff;
+    padding: 50px 10px 10px 10px;
+    font-size: clamp(32px, 6vw, 80px);
+    text-align: center;
+}
+
+.container-main p {
+    color: #fff;
+    font-weight: 550;
+    font-size: 100%;
+    text-align: justify;
+    max-width: 400px;
+    width: 100%;
+}
+
+.container-script {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    background: transparent;
+    z-index: 1;
+}
+
+.container-script::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0);
+    z-index: -1;
+}
+
+.container-script header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-script header h2 {
+    color: #fff;
+    font-size: clamp(16px, 4vw, 24px);
+}
+
+.container-script header button {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 20px;
+}
+
+.container-script pre {
+    background: #171717;
+    color: #fff;
+    padding: 10px;
+    border: 2px solid #fff;
+    overflow-x: auto;
+    font-size: 14px;
+    width: 100%;
+    max-height: 100px;
+    white-space: pre;
+}
+
+.container-script code {
+    display: block;
+    width: 100%;
+}
+
+.language-lua {
+    width: 100%;
+}
+
+.container-script pre::-webkit-scrollbar {
+    height: 5px;
+}
+
+.container-script pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.container-script pre::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    background: #171717;
+    padding: 10px;
+}
+
+.token.keyword   { color: #ff6ec7; }
+.token.string    { color: #4ec9b0; }
+.token.function  { color: #82aaff; }
+.token.comment   { color: #6a9955; font-style: italic; }
+
+.container-status-script h1,
+.container-status-executor h1, .container-devs h1 {
+    color: #fff;
+    font-size: clamp(28px, 5vw, 50px);
+}
+
+.container-status-script-itens,
+.container-status-executor-itens {
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.container-status-item {
+    display: flex;
+    padding: 15px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-status-item h3,
+.container-status-item span {
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.container-dev-item {
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    border: 2px solid #FFFFFF00;
+    height: 380px;
+    width: 300px;
+}
+
+.container-dev-item h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+}
+
+.container-dev-item p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.dev-avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.discord-decoration {
+    position: absolute;
+    top: -25px;
+    width: 100%;
+}
+
+footer {
+    display: none;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 800;
+    padding: 50px;
+    width: 100%;
+}
+
+footer span {
+    color: #fff;
+    font-style: none;
+    font-size: 25px;
+    font-weight: 800;
+    transition: 1s;
+}
+
+footer a {
+    color: #fff;
+    font-style: normal;
+    font-size: 25px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #c6c6c6;
+}
+
+@media (max-width: 650px) {
+    .container-infomation h1 {
+        font-size: 400%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .container-main p {
+        font-size: 90%;
+        width: 90%;
+    }
+
+    .container-script,
+    .container-status-script-itens,
+    .container-status-executor-itens {
+        width: 90%;
+    }
+
+    .container-script pre {
+        font-size: 12px;
+        max-height: 120px;
+    }
+    
+    .container-dev-item {
+        height: 380px;
+        width: 300px;
+    }
+    
+    .dev-avatar {
+        width: 100%;
+        border-radius: 50%;
+    }
+    
+    .discord-decoration {
+        position: absolute;
+        top: -5px;
+        width: 100%;
+    }
+    
+    footer span, footer a {
+        font-size: 80%;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
