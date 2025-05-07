@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Hub</title>
+    <link rel="stylesheet" href="css/styles-main.css">
+    <link rel="shortcut icon" href="favicons/assets-logo.ico" type="image/x-icon">
+    <script src="js/tsparticles@1.37.5-tsparticles.min.js"></script>
+</head>
+<body>
+    
+    <div class="container-api-load">
+        <h1 id="text-load">Loading</h1>
+        <span id="text-count">0</span>
+    </div>
+    
+    <div class="container-introduction">
+        <h1>Ol&aacute; visitante, deseja entrar?</h1>
+        <button id="button-introduction">Entrar</button>
+    </div>
+
+    <main class="container-main">
+        <section class="container-infomation">
+            <h1>Chaos Studio</h1>
+            <p>Chaos Hub  &eacute; um script feito por Chaos studio, interativo e f&aacute;cil de usar, Sempre tendo &oacute;timas fun&ccedil;&otilde;es para jogos famosos e jogos menores, Estaremos sempre dispostos a sugest&otilde;es tanto para a cria&ccedil;&atilde;o de scripts para outros jogos ou ideias de fun&ccedil;&otilde;es novas.</p>
+            <div class="container-script">
+                <header>
+                    <h2>ChaosHub</h2>
+                    <button>copy script</button>
+                </header>
+
+                <pre><code class="language-lua" id="content-script">loadstring(game:HttpGet("https://chaos-hub.vercel.app/script/loader"))()</code></pre>
+            </div>
+        </section>
+        <section class="container-status-script">
+            <h1>Chaos hub script status</h1>
+            <div class="container-status-script-itens">
+                
+            </div>
+        </section>
+        <section class="container-status-executor">
+            <h1>Chaos hub executor status</h1>
+            <div class="container-status-executor-itens">   
+            </div>
+        </section>
+        <section class="container-devs">
+            <h1>Developers</h1>
+        </section>
+        <footer>
+            <span>Website by <a target="_blank" href="https://rael-dev.vercel.app/">rael (Laelmano24)</a></span>
+        </footer>
+    </main>
+
+    <div id="particles-js"></div>
+    <script src="js/1.29.0-prism.min.js"></script>
+    <script src="js/components-prism-lua.min.js"></script>
+    
+    <script src="js/scripts-create-element.js"></script>
+    <script src="js/scripts-tsparticles.js"></script>
+</body>
+</html>
